@@ -135,10 +135,6 @@ struct UserFormsTemp: View {
                 }
                 .disabled(!(isValidEmail(emailID) && isValidPhone(phone)))
                 
-                Button("Populate"){
-                    populateDataForms()
-                }
-                
             }
             
             .navigationTitle("Personal Information")
@@ -160,14 +156,6 @@ struct UserFormsTemp: View {
         let phoneRegex = "^[0-9]{10}$"
         let phonePredicate = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
         return phonePredicate.evaluate(with: phone)
-    }
-    
-    func populateDataForms(){
-        firstName = "Hemanth"
-        lastName = "Palani"
-        curGender = "Male"
-        emailID = "Hems@gmail.com"
-        phone = "9150998077"
     }
     
     func submit(){
